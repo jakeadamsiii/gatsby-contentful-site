@@ -13,9 +13,15 @@ const BlogPost = ({node}) =>{
   )
 }
 
+const SiteTitle = ({contentfulSiteTitle}) =>{
+  return ( 
+    <h1>{contentfulSiteTitle.titleText}</h1>
+  )
+}
+
 const IndexPage = ({data}) => (
   <Layout>
-    <h1>hi</h1>
+    <SiteTitle contentfulSiteTitle={data.contentfulSiteTitle} />
     <ul className='blog-post'>
     {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
     </ul>
@@ -44,5 +50,8 @@ query pageQuery {
       }
     }
   }
+	contentfulSiteTitle {
+	  titleText
+	}
 }
 `

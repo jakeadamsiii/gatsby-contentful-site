@@ -15,6 +15,9 @@ exports.createPages = ({graphql, boundActionCreators}) => {
               }
             }
           }
+          contentfulSiteTitle{
+            titleText
+          }
         }
       `).then((result) => {
         if (result.errors) {

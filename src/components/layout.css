@@ -702,3 +702,9 @@ ul.blog-post li p {
   top:30px;
   transform:translateX(-10%);
 }
+
+.footer{
+  width:100%;
+  height: 150px;
+  background: #333;
+}
